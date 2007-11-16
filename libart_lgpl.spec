@@ -13,6 +13,7 @@ Name: libart_lgpl
 Version: 2.3.19
 Release: %mkrel 2
 Source0: http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{name}-%{version}.tar.bz2
+# fix header use with C++ (merged upstream)
 Patch: libart_lgpl-2.3.19-extern-c.patch
 License: LGPL
 URL: http://www.levien.com/libart/
