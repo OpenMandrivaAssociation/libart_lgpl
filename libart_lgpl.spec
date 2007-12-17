@@ -18,7 +18,6 @@ Patch: libart_lgpl-2.3.19-extern-c.patch
 License: LGPL
 URL: http://www.levien.com/libart/
 Group: System/Libraries
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This is the LGPL'd component of libart.  Libart is a library for 
