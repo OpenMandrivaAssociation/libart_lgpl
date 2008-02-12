@@ -26,7 +26,6 @@ Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
 
 %description -n %{lib_name}
-
 This is the LGPL'd component of libart.  Libart is a library for 
 high-performance 2D graphics. All functions needed for
 running the Gnome canvas, and for printing support, will be going in
@@ -44,7 +43,6 @@ Requires:   %{lib_name} = %{version}-%{release}
 
 
 %description -n %develname
-
 This is the LGPL'd component of libart.  Libart is a library for 
 high-performance 2D graphics. All functions needed for
 running the Gnome canvas, and for printing support, will be going in
