@@ -3,7 +3,7 @@
 %define lib_name %mklibname art_lgpl %{lib_major}
 %define develname %mklibname -d art_lgpl
 
-Summary: Libart is a library for high-performance 2D graphics
+Summary: Library for high-performance 2D graphics
 Name: libart_lgpl
 Version: 2.3.20
 Release: %mkrel 1
