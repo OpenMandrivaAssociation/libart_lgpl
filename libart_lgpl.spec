@@ -5,8 +5,8 @@
 
 Summary: Library for high-performance 2D graphics
 Name: libart_lgpl
-Version: 2.3.20
-Release: %mkrel 5
+Version: 2.3.21
+Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{name}-%{version}.tar.bz2
 License: LGPL
 URL: http://www.levien.com/libart/
