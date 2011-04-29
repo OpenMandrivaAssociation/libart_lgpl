@@ -63,7 +63,8 @@ for specific applications.
 rm -rf $RPM_BUILD_ROOT
 
 %makeinstall_std
-%multiarch_binaries %buildroot%_bindir/*-config
+%multiarch_binaries %buildroot%_bindir/libart2-config
+
 %multiarch_includes %buildroot%_includedir/libart-2.0/libart_lgpl/art_config.h
 
 %clean
