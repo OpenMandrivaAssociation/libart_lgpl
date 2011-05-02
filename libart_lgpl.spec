@@ -90,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 %dir %{multiarch_includedir}/libart-2.0
 %dir %{multiarch_includedir}/libart-2.0/libart_lgpl
-%{multiarch_includedir}/art_config.h
 %{_libdir}/*.la
 %{_libdir}/*.a
 %{_libdir}/*.so
