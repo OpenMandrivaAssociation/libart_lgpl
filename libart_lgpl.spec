@@ -6,7 +6,7 @@
 Summary: Library for high-performance 2D graphics
 Name: libart_lgpl
 Version: 2.3.21
-Release: %mkrel 3
+Release: %mkrel 4
 Source0: http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{name}-%{version}.tar.bz2
 License: LGPL
 URL: http://www.levien.com/libart/
@@ -63,6 +63,7 @@ for specific applications.
 rm -rf $RPM_BUILD_ROOT
 
 %makeinstall_std
+
 %multiarch_binaries %buildroot%_bindir/libart2-config
 
 %multiarch_includes %buildroot%_includedir/libart-2.0/libart_lgpl/art_config.h
@@ -85,11 +86,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %develname
 %defattr(-,root,root)
 %{_bindir}/*-config
-%{_bindir}/*/libart2-config
+%{multiarch_bindir}/libart2-config
 %{_includedir}/*
+%dir %{multiarch_includedir}/libart-2.0
+%dir %{multiarch_includedir}/libart-2.0/libart_lgpl
+%{multiarch_includedir}/art_config.h
 %{_libdir}/*.la
 %{_libdir}/*.a
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
-
-
