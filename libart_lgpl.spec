@@ -60,6 +60,7 @@ rm -rf %{buildroot}
 rm -f %{buildroot}%{_libdir}/*.la
 
 %multiarch_binaries %{buildroot}%{_bindir}/libart2-config
+
 %multiarch_includes %{buildroot}%{_includedir}/libart-2.0/libart_lgpl/art_config.h
 
 %files -n %{lib_name}
