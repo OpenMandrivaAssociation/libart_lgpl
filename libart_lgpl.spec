@@ -6,12 +6,11 @@
 Summary: Library for high-performance 2D graphics
 Name: libart_lgpl
 Version: 2.3.21
-Release: %mkrel 4
-Source0: http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{name}-%{version}.tar.bz2
+Release: 5
 License: LGPL
-URL: http://www.levien.com/libart/
 Group: System/Libraries
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
+URL: http://www.levien.com/libart/
+Source0: http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{name}-%{version}.tar.bz2
 
 %description
 This is the LGPL'd component of libart.  Libart is a library for 
@@ -32,65 +31,46 @@ running the Gnome canvas, and for printing support, will be going in
 here. The GPL'd component will be getting various enhanced functions
 for specific applications.
 
-%package -n %develname
+%package -n %{develname}
 Summary:	%{summary}
 Group:		Development/GNOME and GTK+
-Provides:	art_lgpl-devel = %{version}-%{release}
+Requires:   %{lib_name} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%mklibname -d art_lgpl 2
-Requires:   pkgconfig >= 0.8
-Requires:   %{lib_name} = %{version}-%{release}
 
-
-%description -n %develname
+%description -n %{develname}
 This is the LGPL'd component of libart.  Libart is a library for 
 high-performance 2D graphics. All functions needed for
 running the Gnome canvas, and for printing support, will be going in
 here. The GPL'd component will be getting various enhanced functions
 for specific applications.
 
-
 %prep
 %setup -q
 
 %build
+%configure2_5x \
+	--disable-static
 
-
-%configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
+rm -rf %{buildroot}
 %makeinstall_std
+rm -f %{buildroot}%{_libdir}/*.la
 
-%multiarch_binaries %buildroot%_bindir/libart2-config
-
-%multiarch_includes %buildroot%_includedir/libart-2.0/libart_lgpl/art_config.h
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
+%multiarch_binaries %{buildroot}%{_bindir}/libart2-config
+%multiarch_includes %{buildroot}%{_includedir}/libart-2.0/libart_lgpl/art_config.h
 
 %files -n %{lib_name}
-%defattr(-,root,root)
 %{_libdir}/libart_lgpl_2.so.%{lib_major}*
 
-%files -n %develname
-%defattr(-,root,root)
+%files -n %{develname}
 %{_bindir}/*-config
 %{multiarch_bindir}/libart2-config
 %{_includedir}/*
 %dir %{multiarch_includedir}/libart-2.0
 %dir %{multiarch_includedir}/libart-2.0/libart_lgpl
-%{_libdir}/*.la
-%{_libdir}/*.a
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
+
