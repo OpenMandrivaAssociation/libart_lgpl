@@ -9,7 +9,7 @@
 Summary:	Library for high-performance 2D graphics
 Name:		libart_lgpl
 Version:	2.3.21
-Release:	9
+Release:	10
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.levien.com/libart/
