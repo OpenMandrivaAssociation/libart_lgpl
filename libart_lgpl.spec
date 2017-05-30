@@ -9,7 +9,7 @@
 Summary:	Library for high-performance 2D graphics
 Name:		libart_lgpl
 Version:	2.3.21
-Release:	19
+Release:	20
 License:	LGPLv2
 Group:		System/Libraries
 Url:		http://www.levien.com/libart/
@@ -56,16 +56,11 @@ autoreconf -fiv
 %install
 %makeinstall_std
 
-%multiarch_binaries %{buildroot}%{_bindir}/libart2-config
-
-%multiarch_includes %{buildroot}%{_includedir}/libart-2.0/libart_lgpl/art_config.h
-
 %files -n %{libname}
 %{_libdir}/libart_lgpl_2.so.%{major}*
 
 %files -n %{devname}
 %{_bindir}/*-config
-%{multiarch_bindir}/libart2-config
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
