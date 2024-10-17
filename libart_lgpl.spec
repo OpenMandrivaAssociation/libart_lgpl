@@ -12,7 +12,7 @@ Version:	2.3.21
 Release:	21
 License:	LGPLv2
 Group:		System/Libraries
-Url:		http://www.levien.com/libart/
+Url:		https://www.levien.com/libart/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{url_ver}/%{name}-%{version}.tar.bz2
 
 %description
