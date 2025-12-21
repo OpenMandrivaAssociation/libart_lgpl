@@ -15,6 +15,11 @@ Group:		System/Libraries
 Url:		https://www.levien.com/libart/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/%{url_ver}/%{name}-%{version}.tar.bz2
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 This is the LGPL'd component of libart.  Libart is a library for 
 high-performance 2D graphics. All functions needed for
